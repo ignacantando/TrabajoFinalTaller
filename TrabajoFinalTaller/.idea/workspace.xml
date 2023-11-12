@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23077453-e7e0-42e0-ba4f-588089715da1" name="Changes" comment="" />
+    <list default="true" id="23077453-e7e0-42e0-ba4f-588089715da1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testModeloNegocio/AgenciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testModeloNegocio/AgenciaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testModeloNegocio/CrearTicketEmpleadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testModeloNegocio/CrearTicketEmpleadoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testModeloNegocio/CrearTicketEmpleadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testModeloNegocio/CrearTicketEmpleadorTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -18,16 +28,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/gonza/Downloads/ultimaversion/TrabajoFinalTaller-master/TrabajoFinalTaller-master/TrabajoFinalTaller/pom.xml",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gonza/Downloads/LinkeFi_v3.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.CrearTicketEmpleadoTest">
+    <configuration name="CrearTicketEmpleadoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrabajoFinalTaller" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testModeloNegocio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testModeloNegocio" />
+      <option name="MAIN_CLASS_NAME" value="testModeloNegocio.CrearTicketEmpleadoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrearTicketEmpleadorTest.esc3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrabajoFinalTaller" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testModeloNegocio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testModeloNegocio" />
+      <option name="MAIN_CLASS_NAME" value="testModeloNegocio.CrearTicketEmpleadorTest" />
+      <option name="METHOD_NAME" value="esc3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatillarRondaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrabajoFinalTaller" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testModeloNegocio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testModeloNegocio" />
+      <option name="MAIN_CLASS_NAME" value="testModeloNegocio.GatillarRondaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneraPostulantesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrabajoFinalTaller" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testModeloNegocio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testModeloNegocio" />
+      <option name="MAIN_CLASS_NAME" value="testModeloNegocio.GeneraPostulantesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="matchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrabajoFinalTaller" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testModeloNegocio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testModeloNegocio" />
+      <option name="MAIN_CLASS_NAME" value="testModeloNegocio.matchTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CrearTicketEmpleadoTest" />
+        <item itemvalue="JUnit.CrearTicketEmpleadorTest.esc3" />
+        <item itemvalue="JUnit.matchTest" />
+        <item itemvalue="JUnit.GeneraPostulantesTest" />
+        <item itemvalue="JUnit.GatillarRondaTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

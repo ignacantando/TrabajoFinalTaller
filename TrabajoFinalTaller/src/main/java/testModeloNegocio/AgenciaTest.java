@@ -739,7 +739,7 @@ public class AgenciaTest {
 
 
     @Test
-    public void guardarAgencia(){
+    public void testGuardarAgencia(){
         try {
             agencia.guardarAgencia("pepito.xml");
 
@@ -751,7 +751,7 @@ public class AgenciaTest {
     }
 
     @Test
-    public void cargarAgencia(){
+    public void testCargarAgencia(){
         try {
             agencia.guardarAgencia("pepito2.xml");
             agencia.cargarAgencia("pepito3.xml");

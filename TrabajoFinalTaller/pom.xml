@@ -11,4 +11,18 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>com.mycompany.trabajofinaltaller.TrabajoFinalTaller</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 </project>

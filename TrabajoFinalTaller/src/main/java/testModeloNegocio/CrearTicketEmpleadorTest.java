@@ -19,6 +19,7 @@ import modeloDatos.Empleador;
 import modeloDatos.Ticket;
 import modeloNegocio.Agencia;
 import util.Constantes;
+import util.Mensajes;
 
 public class CrearTicketEmpleadorTest {
 
@@ -98,8 +99,9 @@ public class CrearTicketEmpleadorTest {
 		agencia.setEstadoContratacion(true);
 		try {
 			agencia.crearTicketEmpleado(Constantes.HOME_OFFICE, 1000, Constantes.JORNADA_MEDIA, Constantes.JUNIOR, Constantes.EXP_NADA, Constantes.PRIMARIOS, empleadoPretenso1);
+			Assert.fail("Deberia lanzar excepcion");
 		} catch (ImposibleModificarTicketsException e) {
-			
+			Assert.assertEquals(Mensajes.ERROR_AGENCIA_EN_CONTRATACION.getValor(),e.getMessage());
 		}
 	}
 
