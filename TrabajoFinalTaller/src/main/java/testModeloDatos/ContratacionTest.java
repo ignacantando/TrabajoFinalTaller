@@ -23,7 +23,7 @@ public class ContratacionTest {
 	String testapellidoEmpleado="Lopez";
 	int testedadEmpleado=5;
 	
-	
+
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -77,5 +77,4 @@ public class ContratacionTest {
 		Assert.assertEquals(empleador, contrato.getEmpleador());
 	}
 	
-
 }

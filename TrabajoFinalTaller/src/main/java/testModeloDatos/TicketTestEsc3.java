@@ -4,10 +4,16 @@ import modeloDatos.ClientePuntaje;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloDatos.Ticket;
+import modeloNegocio.Agencia;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import excepciones.ImposibleModificarTicketsException;
+import excepciones.LimiteInferiorRemuneracionInvalidaException;
+import excepciones.LimiteSuperiorRemuneracionInvalidaException;
 import util.Constantes;
 
 import java.util.ArrayList;
@@ -25,7 +31,7 @@ public class TicketTestEsc3 {
     @After
     public void tearDown() throws Exception {
     }
-
+    
     @Test
     public void testGetComparacionLocacion1(){
         Assert.assertEquals("No coincide el getLocacion",1,ticket3.getComparacionLocacion(ticket),0.0001);
@@ -39,21 +45,6 @@ public class TicketTestEsc3 {
     @Test
     public void testGetComparacionLocacion3(){
         Assert.assertEquals("No coincide el getLocacion",1,ticket3.getComparacionLocacion(ticket3),0.0001);
-    }
-
-    @Test
-    public void testGetComparacionRenumeracion1(){
-        Assert.assertEquals(("No coincide  renum"),1,ticket3.getComparacionRemuneracion(ticket),0.0001);
-    }
-
-    @Test
-    public void testGetComparacionRenumeracion2(){
-        Assert.assertEquals(("No coincide  renum"),1,ticket3.getComparacionRemuneracion(ticket2),0.0001);
-    }
-
-    @Test
-    public void testGetComparacionRenumeracion3(){
-        Assert.assertEquals(("No coincide  renum"),1,ticket3.getComparacionRemuneracion(ticket3),0.0001);
     }
 
     @Test
@@ -121,5 +112,52 @@ public class TicketTestEsc3 {
         ticket.setRemuneracion(3232);
         Assert.assertEquals("No coincide el set de renumeracion",3232,ticket.getRemuneracion());
     }
+    
+    @Test
+	public void testComparacionRenumeracion() {
+		Agencia agencia= Agencia.getInstance();
+		try {
+			agencia.setLimitesRemuneracion(5000,15000);
+		} catch (LimiteSuperiorRemuneracionInvalidaException | LimiteInferiorRemuneracionInvalidaException e) {
+			e.printStackTrace();
+		}	
+		Assert.assertEquals("No coincide el getRenumeracion",1,ticket3.getComparacionRemuneracion(ticket),0.0001);	
+	}
+	
+    @Test
+	public void testComparacionRenumeracion2() {
+    	Agencia agencia= Agencia.getInstance();
+		try {
+			agencia.setLimitesRemuneracion(5000,15000);
+		} catch (LimiteSuperiorRemuneracionInvalidaException | LimiteInferiorRemuneracionInvalidaException e) {
+			e.printStackTrace();
+		}
+		Assert.assertEquals("No coincide el getRenumeracion",1,ticket3.getComparacionRemuneracion(ticket2),0.0001);
+    }
+    
+    @Test
+	public void testComparacionRenumeracion3() {
+    	Agencia agencia= Agencia.getInstance();
+		try {
+			agencia.setLimitesRemuneracion(5000,15000);
+		} catch (LimiteSuperiorRemuneracionInvalidaException | LimiteInferiorRemuneracionInvalidaException e) {
+			e.printStackTrace();
+		}
+		Assert.assertEquals("No coincide el getRenumeracion",1,ticket3.getComparacionRemuneracion(ticket3),0.0001);//este esta mal
+	}
+    @Test
+	public void testComparacionTotal1() {
+		Assert.assertEquals("No coincide el getRenumeracion",-4,ticket3.getComparacionTotal(ticket),0.0001);
+	}
+    
+    @Test
+	public void testComparacionTotal2() {
+		Assert.assertEquals("No coincide el getRenumeracion",-1,ticket3.getComparacionTotal(ticket2),0.0001);
+	}
+    
+    @Test
+	public void testComparacionTotal3() {
+		Assert.assertEquals("No coincide el getRenumeracion",6,ticket3.getComparacionTotal(ticket3),0.0001);//este esta mal
+	}
 
 }

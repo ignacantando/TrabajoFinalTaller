@@ -20,7 +20,7 @@ public class EmpleadorTest {
     @After
     public void tearDown() throws Exception {
     }
-
+    
     @Test
     public void testConstructor1(){
         String username="pepe21";
@@ -179,4 +179,19 @@ public class EmpleadorTest {
     }
 
 
+    @Test
+    public void testSetTciket(){
+    	String username="pepe21";
+        String password="abc";
+        String realname="pepe";
+        String telefono="5487541";
+        String rubro= Constantes.COMERCIO_INTERNACIONAL;
+        String tipoPersona= Constantes.JURIDICA;
+
+        Empleador empleador = new Empleador(username,password,realname,telefono,rubro,tipoPersona);
+		Ticket ticket=new Ticket(Constantes.HOME_OFFICE,1000,Constantes.JORNADA_MEDIA,Constantes.JUNIOR,Constantes.EXP_NADA,Constantes.PRIMARIOS);
+		
+		empleador.setTicket(ticket);
+    }
+    
 }

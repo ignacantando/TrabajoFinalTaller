@@ -95,13 +95,12 @@ public class ClientePuntajeTest {
 
 		Empleador cliente=new Empleador(username,password,realname,telefono,Constantes.SALUD,Constantes.JURIDICA);
 		Empleador cliente2=new Empleador("JUAN",password,realname,telefono,Constantes.SALUD,Constantes.JURIDICA);
+		
 		ClientePuntaje clientepuntaje=new ClientePuntaje(puntaje,cliente);
 
 		clientepuntaje.setCliente(cliente2);
-
+		
 		Assert.assertEquals(cliente2,clientepuntaje.getCliente());
-		//SE SUPONE QUE AL SETEAR AL CLIENTE 2, QUEDA CON EL PUNTAJE DEL PRIMERO?
-		/////////////////////////////////////////////////
 	}
 
 }
