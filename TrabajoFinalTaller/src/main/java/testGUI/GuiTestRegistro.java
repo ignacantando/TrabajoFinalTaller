@@ -2,16 +2,20 @@ package testGUI;
 
 import static org.junit.Assert.*;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import controlador.Controlador;
 public class GuiTestRegistro {
 	Robot robot;
     Controlador controlador;
     FalsoOptionPane op = new FalsoOptionPane();
 
-    public GuiTestLogin(){
+    public GuiTestRegistro(){
         try{
             robot = new Robot();
         }
@@ -22,13 +26,13 @@ public class GuiTestRegistro {
     @Before
     public void setUp() throws Exception{
         controlador = new Controlador();
-        controlador.setOptionpane(op);
-        controlador.serVista(controlador.getVentana().goToRegistro());
+        controlador.setMyOptionPane(op);
+        controlador.getVista().
     }
 
     @After
     public void tearDown() throws Exception{
-        controlador.getVentana().setVisible(false);
+        controlador.getVista().setVisible(false);
     }
     
     @Test
@@ -133,7 +137,7 @@ public class GuiTestRegistro {
     
     @Test
     public void botonCancelar() {
-    	
+    	vista 
     }
     
 }
