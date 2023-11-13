@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import persistencia.AgenciaDTO;
+import persistencia.PersistenciaXML;
 import persistencia.UtilPersistencia;
 import util.Constantes;
 import util.Mensajes;
@@ -722,8 +723,11 @@ public class AgenciaTest {
 
     @Test
     public void testGuardarAgencia(){
+
         try {
-            agencia.guardarAgencia("pepito.xml");
+        	PersistenciaXML persistencia=new PersistenciaXML();
+        	agencia.setPersistencia(persistencia);
+        	agencia.guardarAgencia("pepito.xml");
 
             File archivo = new File("pepito.xml");
             Assert.assertTrue("Debería existir el archivo pepito.xml", archivo.exists());
@@ -735,6 +739,8 @@ public class AgenciaTest {
     @Test
     public void testCargarAgencia(){
         try {
+        	PersistenciaXML persistencia=new PersistenciaXML();
+        	agencia.setPersistencia(persistencia);
             agencia.guardarAgencia("pepito2.xml");
             agencia.cargarAgencia("pepito3.xml");
             Assert.fail("Deberia lanzar excepcion porque no existe archivo");
@@ -742,31 +748,31 @@ public class AgenciaTest {
         } catch (ClassNotFoundException e) {
             Assert.fail("No deberia entrar aca");
         }
-
-
     }
 
     @Test
     public void testAgenciaFromAgenciaDTO() {
+    	PersistenciaXML persistencia=new PersistenciaXML();
+    	agencia.setPersistencia(persistencia);
         AgenciaDTO agenciaDTO = new AgenciaDTO();
         Empleador empleador = new Empleador("pepe21", "abc", "pepe", "54545", Constantes.SALUD, Constantes.FISICA);
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso("Juancito", "abc", "Juan", "54545423", "Lopez", 94);
 
-        HashMap<String, EmpleadoPretenso> empleados = new HashMap<>();
-        HashMap<String, Empleador> empleadores = new HashMap<>();
+        HashMap<String, EmpleadoPretenso> empleados = new HashMap<String, EmpleadoPretenso>();
+        HashMap<String, Empleador> empleadores = new HashMap<String, Empleador>();
 
         empleadores.put("pepe21", empleador);
         empleados.put("Juancito", empleadoPretenso);
 
         Contratacion contratacion = new Contratacion(empleador, empleadoPretenso);
-        ArrayList<Contratacion> contrataciones = new ArrayList<>();
+        ArrayList<Contratacion> contrataciones = new ArrayList<Contratacion>();
         contrataciones.add(contratacion);
 
        
         agenciaDTO.setEmpleadores(empleadores);
         agenciaDTO.setEmpleados(empleados);
-        agenciaDTO.setLimiteInferior(3500);
-        agenciaDTO.setLimiteSuperior(5000);
+        agenciaDTO.setLimiteInferior(10000);
+        agenciaDTO.setLimiteSuperior(2000);
         agenciaDTO.setContrataciones(contrataciones);
         agenciaDTO.setEstadoContratacion(true);
         
@@ -781,5 +787,5 @@ public class AgenciaTest {
         
     }
 
-  
+
 }
