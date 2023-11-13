@@ -771,20 +771,19 @@ public class AgenciaTest {
        
         agenciaDTO.setEmpleadores(empleadores);
         agenciaDTO.setEmpleados(empleados);
-        agenciaDTO.setLimiteInferior(10000);
-        agenciaDTO.setLimiteSuperior(2000);
+        agenciaDTO.setLimiteInferior(70000);
+        agenciaDTO.setLimiteSuperior(100000);
         agenciaDTO.setContrataciones(contrataciones);
         agenciaDTO.setEstadoContratacion(true);
         
-        UtilPersistencia.agenciaFromAgenciaDTO(agenciaDTO); //esto crashea
+        UtilPersistencia.agenciaFromAgenciaDTO(agenciaDTO);
      
         Assert.assertEquals(agenciaDTO.getEmpleadores(),agencia.getEmpleadores());
         Assert.assertEquals(agenciaDTO.getEmpleados(),agencia.getEmpleados());
         Assert.assertEquals(agenciaDTO.getContrataciones(),agencia.getContrataciones());
         Assert.assertEquals(agenciaDTO.getLimiteInferior(),agencia.getLimiteInferior());
         Assert.assertEquals(agenciaDTO.getLimiteSuperior(),agencia.getLimiteSuperior());
-        Assert.assertEquals(agenciaDTO.isEstadoContratacion(),agencia.isEstadoContratacion());
-        
+        Assert.assertEquals(agenciaDTO.isEstadoContratacion(),agencia.isEstadoContratacion());   
     }
 
 
