@@ -125,7 +125,7 @@ public class TicketTestEsc1 {
 		} catch (LimiteSuperiorRemuneracionInvalidaException | LimiteInferiorRemuneracionInvalidaException e) {
 			e.printStackTrace();
 		}
-    	Assert.assertEquals("No coincide el getRenumeracion",-0.5,ticket.getComparacionRemuneracion(ticket2),0.0001);//este esta mal	
+    	Assert.assertEquals("No coincide el getRenumeracion",-0.5,ticket.getComparacionRemuneracion(ticket2),0.0001);	
     }
     @Test
 	public void testComparacionRenumeracion3() {
@@ -141,7 +141,7 @@ public class TicketTestEsc1 {
     
     @Test
 	public void testComparacionTotal1() {
-		Assert.assertEquals("No coincide el getRenumeracion",6,ticket.getComparacionTotal(ticket),0.0001);//se supone que los totales dan mal ya que los otros gets dieron mal
+		Assert.assertEquals("No coincide el getRenumeracion",6,ticket.getComparacionTotal(ticket),0.0001);
 	}
     @Test
 	public void testComparacionTotal2() {

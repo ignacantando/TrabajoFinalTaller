@@ -139,10 +139,6 @@ public class GeneraPostulantesTest {
 		empleador2.setTicket(ticket5);
 		
 		agencia.generaPostulantes();
-		
-		//Empleados{pepe21{luis,pedro},lucas34{pedro,luis}}
-		//Empleadores{luis{pepe21,lucas34},pedro{lucas34,pepe21}}
-		//preguntar si deberiamos hacer los arraylist de cliente puntaje y comparar
 	
 		ArrayList<ClientePuntaje> c1=new ArrayList<ClientePuntaje>();
 		

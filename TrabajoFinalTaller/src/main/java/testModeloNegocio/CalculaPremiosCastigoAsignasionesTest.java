@@ -49,12 +49,6 @@ public class CalculaPremiosCastigoAsignasionesTest {
 	
 	@Test
 	public void testesc2() {
-		
-		/*
-		 * Empleados{pepe21{luis,leo},lucas34{leo,fran},tomas98{luis,pedro}}
-		 *	Empleadores{luis{pepe21,tomas98},pedro{tomas98},leo{pepe21,lucas34},fran{lucas34}}
-		 */
-		
 		EmpleadoPretenso empleadoPretenso1= new EmpleadoPretenso("pepe21","123","pepe","5465","lopez",21);
 		EmpleadoPretenso empleadoPretenso2 = new EmpleadoPretenso("lucas34","123","lucas","5465","gomez",24);
 		EmpleadoPretenso empleadoPretenso3 = new EmpleadoPretenso("tomas98","123","tomas","5465","perez",23);
@@ -146,8 +140,8 @@ public class CalculaPremiosCastigoAsignasionesTest {
 		agencia.calculaPremiosCastigosAsignaciones();
 	
 		System.out.println(empleadoPretenso1.getPuntaje());
-		System.out.println(empleadoPretenso2.getPuntaje());//penaliza mal al ultimo
-		System.out.println(empleadoPretenso3.getPuntaje());//penaliza mal al ultimo
+		System.out.println(empleadoPretenso2.getPuntaje());
+		System.out.println(empleadoPretenso3.getPuntaje());
 		
 		System.out.println("----------------------------------");
 		System.out.println(empleador1.getPuntaje());

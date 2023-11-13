@@ -99,7 +99,7 @@ public class GatillarRondaTest {
 	    
 		ArrayList<ClientePuntaje> c= new ArrayList<ClientePuntaje>();
 		
-		Assert.assertEquals(c,empleador1.getListaDePostulantes());  //no miro si los genera bien ya que eso lo testeamos en generapostulante
+		Assert.assertEquals(c,empleador1.getListaDePostulantes());  
 		Assert.assertEquals(c,empleador2.getListaDePostulantes());
 		Assert.assertEquals(0,empleador1.getPuntaje());
 		Assert.assertEquals(0,empleador2.getPuntaje());
@@ -108,10 +108,6 @@ public class GatillarRondaTest {
 
 	@Test
 	public void testesc5() {
-		/*
-		 * Empleados{pepe21{luis,leo},lucas34{leo,fran},tomas98{luis,pedro}}
-		 *	Empleadores{luis{pepe21,tomas98},pedro{tomas98},leo{pepe21,lucas34},fran{lucas34}}
-		 */
 		
 		EmpleadoPretenso empleadoPretenso1= new EmpleadoPretenso("pepe21","123","pepe","5465","lopez",21);
 		EmpleadoPretenso empleadoPretenso2 = new EmpleadoPretenso("lucas34","123","lucas","5465","gomez",24);
@@ -232,7 +228,7 @@ public class GatillarRondaTest {
 		
 		Assert.assertEquals(agencia.getEstado(),Mensajes.AGENCIA_EN_BUSQUEDA.getValor());
 		
-		Assert.assertEquals(-20,empleador2.getPuntaje());  //Esta mal 
+		Assert.assertEquals(-20,empleador2.getPuntaje()); 
 	}
 	
 }

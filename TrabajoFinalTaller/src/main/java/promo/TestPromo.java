@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -66,7 +67,7 @@ public class TestPromo {
 		lista2.add(cli6);
 
 		empleador.setListaDePostulantes(lista2);
-		//System.out.println(promo.aplicaPromo(true,empleados,empleadores));
+		Assert.assertEquals(empleador,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
@@ -93,7 +94,7 @@ public class TestPromo {
 		lista2.add(cli6);
 
 		empleador.setListaDePostulantes(lista2);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));
+		Assert.assertEquals(empleador,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
@@ -121,7 +122,7 @@ public class TestPromo {
 		lista2.add(cli6);
 
 		empleador.setListaDePostulantes(lista2);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));
+		Assert.assertEquals(empleador,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
@@ -147,7 +148,7 @@ public class TestPromo {
 		lista2.add(cli2);
 
 		empleador.setListaDePostulantes(lista2);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));
+		Assert.assertEquals(empleado1,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
@@ -163,20 +164,21 @@ public class TestPromo {
 		lista.add(cli1);
 		lista.add(cli2);
 		empleador.setListaDePostulantes(lista);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));
+		Assert.assertEquals(empleador,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
 	public void testCamino6() {
 		Empleador empleador=new Empleador(testuserEmpleador,testpassEmpleador,testrealnameEmpleador,testtelEmpleador,Constantes.SALUD,Constantes.JURIDICA);
 		empleadores.put("1",empleador);
+		empleador.setPuntaje(50);
 		ClientePuntaje cli1=new ClientePuntaje();
 		ClientePuntaje cli2=new ClientePuntaje();
 		ArrayList<ClientePuntaje> lista= new ArrayList<ClientePuntaje>();
 		lista.add(cli1);
 		lista.add(cli2);
 		empleador.setListaDePostulantes(lista);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));
+		Assert.assertEquals(empleador,promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
@@ -184,16 +186,16 @@ public class TestPromo {
 
 		Empleador empleador=new Empleador(testuserEmpleador,testpassEmpleador,testrealnameEmpleador,testtelEmpleador,Constantes.SALUD,Constantes.JURIDICA);
 		empleadores.put("1",empleador);
-		//System.out.println((promo.aplicaPromo(true,empleados,empleadores)));//deberia fijarme si da null
+		Assert.assertNull(promo.aplicaPromo(true,empleados,empleadores));
 	}
 	
 	@Test
 	public void testCamino8() {
-		//promo.aplicaPromo(true,empleados,empleadores); //deberia fijarme si da null
+		Assert.assertNull(promo.aplicaPromo(true,empleados,empleadores)); 
 	}
 	
 	@Test
 	public void testCamino9() {
-		//promo.aplicaPromo(false,empleados,empleadores); //deberia fijarme si da null
+		Assert.assertNull(promo.aplicaPromo(false,empleados,empleadores));
 	}
 }

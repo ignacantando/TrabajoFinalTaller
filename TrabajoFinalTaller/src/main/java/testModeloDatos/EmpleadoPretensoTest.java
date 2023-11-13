@@ -139,16 +139,14 @@ public class EmpleadoPretensoTest {
         String telefono="5487541";
         String apellido= "Lopez";
         int edad=25;
-        int puntaje=-5;
-        Agencia agencia=Agencia.getInstance();
+        int puntaje=-10;
 
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
 
+        empleadoPretenso.setPuntaje(puntaje);
         Ticket ticket= new Ticket(Constantes.HOME_OFFICE,100000,Constantes.JORNADA_MEDIA,Constantes.JUNIOR,Constantes.EXP_MEDIA,Constantes.SECUNDARIOS);
 
-        System.out.println(empleadoPretenso.calculaComision(ticket));
-        //FALTA HACER TEST INTEGRACION ACA
-        ///////////////////////////////////////////////////////
+        Assert.assertEquals(100000*(0.8),empleadoPretenso.calculaComision(ticket),0.01);
     }
 
     @Test
@@ -159,15 +157,16 @@ public class EmpleadoPretensoTest {
         String telefono="5487541";
         String apellido= "Lopez";
         int edad=25;
-        int puntaje=-5;
+        int puntaje=5;
 
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
 
+        empleadoPretenso.setPuntaje(puntaje);
         Ticket ticket= new Ticket(Constantes.HOME_OFFICE,100000,Constantes.JORNADA_MEDIA,Constantes.JUNIOR,Constantes.EXP_MEDIA,Constantes.SECUNDARIOS);
 
-        //FALTA HACER TEST INTEGRACION ACA
-        ///////////////////////////////////////////////////////
+        Assert.assertEquals(100000*(0.8-((double)puntaje/100)),empleadoPretenso.calculaComision(ticket),0.01);
     }
+    
 
     @Test
     public void testCalculaComision3(){
@@ -177,15 +176,50 @@ public class EmpleadoPretensoTest {
         String telefono="5487541";
         String apellido= "Lopez";
         int edad=25;
-        int puntaje=-5;
+        int puntaje=15;
+
+        EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
+        
+        empleadoPretenso.setPuntaje(puntaje);
+        Ticket ticket= new Ticket(Constantes.HOME_OFFICE,100000,Constantes.JORNADA_MEDIA,Constantes.SENIOR,Constantes.EXP_MEDIA,Constantes.SECUNDARIOS);
+
+        Assert.assertEquals(100000*(0.9-((double)puntaje/100)),empleadoPretenso.calculaComision(ticket),0.01);
+    }
+
+    @Test
+    public void testCalculaComision4(){
+        String username="pepe21";
+        String password="123";
+        String realname="pepe";
+        String telefono="5487541";
+        String apellido= "Lopez";
+        int edad=25;
+        int puntaje=17;
+
+        EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
+        
+        empleadoPretenso.setPuntaje(puntaje);
+        Ticket ticket= new Ticket(Constantes.HOME_OFFICE,100000,Constantes.JORNADA_MEDIA,Constantes.MANAGMENT,Constantes.EXP_MEDIA,Constantes.SECUNDARIOS);
+
+        Assert.assertEquals(100000*(1-((double)puntaje/100)),empleadoPretenso.calculaComision(ticket),0.01);
+    }
+    
+    @Test
+    public void testCalculaComision5(){
+        String username="pepe21";
+        String password="123";
+        String realname="pepe";
+        String telefono="5487541";
+        String apellido= "Lopez";
+        int edad=25;
+        int puntaje=85;
 
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
 
+        empleadoPretenso.setPuntaje(puntaje);
         Ticket ticket= new Ticket(Constantes.HOME_OFFICE,100000,Constantes.JORNADA_MEDIA,Constantes.JUNIOR,Constantes.EXP_MEDIA,Constantes.SECUNDARIOS);
 
-        //FALTA HACER TEST INTEGRACION ACA
-        ///////////////////////////////////////////////////////
+        Assert.assertEquals(100000*(0.8-((double)50/100)),empleadoPretenso.calculaComision(ticket),0.01);
     }
-
 
 }

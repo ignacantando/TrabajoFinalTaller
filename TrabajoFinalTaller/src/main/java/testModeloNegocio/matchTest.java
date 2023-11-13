@@ -46,13 +46,13 @@ public class matchTest {
 		
 		agencia.match(empleador1, empleadoPretenso1);
 		
-		Assert.assertEquals("esc1 hay error",50,empleador1.getPuntaje()); //aca verifico que el puntaje del empleador se incremente en 50
-		Assert.assertEquals("esc1 hay error",10,empleadoPretenso1.getPuntaje());//aca verifico que el puntaje del empleado se incremente en 10
+		Assert.assertEquals("esc1 hay error",50,empleador1.getPuntaje()); 
+		Assert.assertEquals("esc1 hay error",10,empleadoPretenso1.getPuntaje());
 		
 		
 		ArrayList<Contratacion> c1=new ArrayList<Contratacion>();
 	
-		Assert.assertNotEquals("esc1 hay error",c1, agencia.getContrataciones());//aca verifico que se haya crado la contratacion
+		Assert.assertNotEquals("esc1 hay error",c1, agencia.getContrataciones());
 		
 		
 		Assert.assertNull(empleadoPretenso1.getTicket());

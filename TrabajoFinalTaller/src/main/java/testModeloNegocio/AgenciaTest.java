@@ -26,14 +26,14 @@ public class AgenciaTest {
 
     @Before
     public void setUp() throws Exception {
-         empleados= new HashMap(); //no borrar esto porque sino anda mal
-         empleadores = new HashMap(); //no borrar esto porque sino anda mal
-         contrataciones = new ArrayList<>(); //no borrar esto porque sino anda mal
-         agencia.setEmpleadores(empleadores); //no borrar esto porque sino anda mal
-         agencia.setEmpleados(empleados); //no borrar esto porque sino anda mal
-         agencia.setContrataciones(contrataciones); //no borrar esto porque sino anda mal
+         empleados= new HashMap(); 
+         empleadores = new HashMap(); 
+         contrataciones = new ArrayList<>(); 
+         agencia.setEmpleadores(empleadores); 
+         agencia.setEmpleados(empleados); 
+         agencia.setContrataciones(contrataciones); 
 
-        //Para la persistencia
+        
         File archivo = new File("pepito.xml");
         if (archivo.exists())
             archivo.delete();
@@ -41,13 +41,11 @@ public class AgenciaTest {
 
     @After
     public void tearDown() throws Exception {
-        agencia.cerrarSesion(); //no borrar esto porque sino anda mal
+        agencia.cerrarSesion(); 
         agencia.setEstadoContratacion(false);
-        //agencia.setLimitesRemuneracion(1000,2000);
-
     }
 
-    //No se puede setear  el tipoUsuario, por ende hay solo un escenario.
+    
     @Test
     public void testCerrarSesion(){
         agencia.cerrarSesion();
@@ -72,7 +70,7 @@ public class AgenciaTest {
             Assert.fail();
         }
 
-        //Se fija si agrega el objeto al hashmap
+        
         Assert.assertEquals("No se agrega el empleado al hashmap",agencia.getEmpleados().get(username),empleado);
 
     }
@@ -94,7 +92,7 @@ public class AgenciaTest {
             Assert.fail("No deberia lanzar excepcion ImposibleCrearEmpleadoException");
         }
 
-        //Se fija si agrega el objeto al hashmap
+       
         Assert.assertEquals("No se agrega el empleado al hashmap",agencia.getEmpleados().get(username),empleado);
     }
 
@@ -115,7 +113,7 @@ public class AgenciaTest {
             Assert.fail("No deberia lanzar excepcion ImposibleCrearEmpleadoException");
         }
 
-        //Se fija si agrega el objeto al hashmap
+       
         Assert.assertEquals("No se agrega el empleado al hashmap",agencia.getEmpleados().get(username),empleado);
     }
 
@@ -136,7 +134,7 @@ public class AgenciaTest {
             Assert.fail("No deberia lanzar excepcion ImposibleCrearEmpleadoException");
         }
 
-        //Se fija si agrega el objeto al hashmap
+        
         Assert.assertEquals("No se agrega el empleado al hashmap",agencia.getEmpleados().get(username),empleado);
     }
 
@@ -155,11 +153,11 @@ public class AgenciaTest {
         } catch (NewRegisterException e) {
             Assert.fail("No tiene que lanzar excepcion NewRegisterException");
         } catch (ImposibleCrearEmpleadoException e) {
-            //System.out.println(e.getMessage());
+          
             Assert.assertEquals(Mensajes.PARAMETROS_NULOS.getValor(),e.getMessage());
 
         }
-        //Se fija si agrega el objeto al hashmap
+       
         Assert.assertFalse("No tiene que agregar  el empleado al hashmap",agencia.getEmpleados().containsKey(username));
     }
 
@@ -210,8 +208,6 @@ public class AgenciaTest {
         } catch (ImposibleCrearEmpleadorException e) {
             Assert.fail();
         }
-
-        //Se fija si agrega el objeto al hashmap
         Assert.assertEquals("No se agrega el empleador al hashmap",agencia.getEmpleadores().get(username),empleador);
 
     }
@@ -234,8 +230,6 @@ public class AgenciaTest {
         } catch (ImposibleCrearEmpleadorException e) {
             Assert.fail();
         }
-
-        //Se fija si agrega el objeto al hashmap
         Assert.assertEquals("No se agrega el empleador al hashmap",agencia.getEmpleadores().get(username),empleador);
 
     }
@@ -258,8 +252,6 @@ public class AgenciaTest {
         } catch (ImposibleCrearEmpleadorException e) {
             Assert.fail();
         }
-
-        //Se fija si agrega el objeto al hashmap
         Assert.assertEquals("No se agrega el empleador al hashmap",agencia.getEmpleadores().get(username),empleador);
 
     }
@@ -284,7 +276,6 @@ public class AgenciaTest {
             Assert.assertEquals(Mensajes.PARAMETROS_NULOS.getValor(),e.getMessage());
         }
 
-        //Se fija si agrega el objeto al hashmap
         Assert.assertFalse("Se agrega el empleador al hashmap por mas que no lo tenia que hacer",agencia.getEmpleadores().containsKey(username));
 
     }
@@ -309,7 +300,6 @@ public class AgenciaTest {
             Assert.assertEquals(Mensajes.PARAMETROS_NULOS.getValor(),e.getMessage());
         }
 
-        //Se fija si agrega el objeto al hashmap
         Assert.assertFalse("Se agrega el empleador al hashmap por mas que no lo tenia que hacer",agencia.getEmpleadores().containsKey(username));
 
     }
@@ -334,7 +324,6 @@ public class AgenciaTest {
             Assert.assertEquals(Mensajes.RUBRO_DESCONOCIDO.getValor(),e.getMessage());
         }
 
-        //Se fija si agrega el objeto al hashmap
         Assert.assertFalse("Se agrega el empleador al hashmap por mas que no lo tenia que hacer",agencia.getEmpleadores().containsKey(username));
 
     }
@@ -359,7 +348,6 @@ public class AgenciaTest {
             Assert.assertEquals(Mensajes.TIPO_PERSONA_DESCONOCIDO.getValor(),e.getMessage());
         }
 
-        //Se fija si agrega el objeto al hashmap
         Assert.assertFalse("Se agrega el empleador al hashmap por mas que no lo tenia que hacer",agencia.getEmpleadores().containsKey(username));
     }
 
@@ -393,7 +381,6 @@ public class AgenciaTest {
             Assert.fail();
         }
 
-        //Se fija si agrega el objeto al hashmap
         Assert.assertEquals("Se agrega el empleador al hashmap",1,agencia.getEmpleadores().size());
 
     }
@@ -459,7 +446,7 @@ public class AgenciaTest {
         String telefono = "5487541";
         String apellido = "Lopez";
         int edad = 25;
-        //System.out.println(agencia.getTipoUsuario());
+        
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username, password, realname, telefono, apellido, edad);
         empleados.put(username, empleadoPretenso);
 
@@ -486,7 +473,6 @@ public class AgenciaTest {
         String telefono = "5487541";
         String apellido = "Lopez";
         int edad = 25;
-        //System.out.println(agencia.getTipoUsuario());
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username, password, realname, telefono, apellido, edad);
         empleados.put(username, empleadoPretenso);
 
@@ -515,7 +501,6 @@ public class AgenciaTest {
         Empleador empleador = new Empleador(username,password,realname,telefono,rubro,tipoPersona);
 
         empleadores.put(username,empleador);
-        //Lista contrataciones vacia entonces tiene que devolver null
         Assert.assertNull(agencia.getContratacionEmpleador(empleador));
 
     }
@@ -575,7 +560,6 @@ public class AgenciaTest {
         EmpleadoPretenso empleadoPretenso = new EmpleadoPretenso(username,password,realname,telefono,apellido,edad);
 
         empleados.put(username,empleadoPretenso);
-        //Lista contrataciones vacia entonces tiene que devolver null
         Assert.assertNull(agencia.getContratacionEmpleadoPretenso(empleadoPretenso));
 
     }
@@ -691,8 +675,6 @@ public class AgenciaTest {
         } catch (NombreUsuarioException e) {
         }
 
-        //System.out.println(agencia.getEstado()); muestra que el estado es correcto
-        //System.out.println(agencia.getTipoUsuario()); muestra 1 significa que logueo
         empleador.setPuntaje(0);
         try {
             agencia.eliminarTicket();
@@ -780,22 +762,24 @@ public class AgenciaTest {
         ArrayList<Contratacion> contrataciones = new ArrayList<>();
         contrataciones.add(contratacion);
 
+       
         agenciaDTO.setEmpleadores(empleadores);
         agenciaDTO.setEmpleados(empleados);
         agenciaDTO.setLimiteInferior(3500);
         agenciaDTO.setLimiteSuperior(5000);
         agenciaDTO.setContrataciones(contrataciones);
         agenciaDTO.setEstadoContratacion(true);
-
-        UtilPersistencia.agenciaFromAgenciaDTO(agenciaDTO);
-
+        
+        UtilPersistencia.agenciaFromAgenciaDTO(agenciaDTO); //esto crashea
+     
         Assert.assertEquals(agenciaDTO.getEmpleadores(),agencia.getEmpleadores());
         Assert.assertEquals(agenciaDTO.getEmpleados(),agencia.getEmpleados());
         Assert.assertEquals(agenciaDTO.getContrataciones(),agencia.getContrataciones());
         Assert.assertEquals(agenciaDTO.getLimiteInferior(),agencia.getLimiteInferior());
         Assert.assertEquals(agenciaDTO.getLimiteSuperior(),agencia.getLimiteSuperior());
         Assert.assertEquals(agenciaDTO.isEstadoContratacion(),agencia.isEstadoContratacion());
+        
     }
 
-
+  
 }
